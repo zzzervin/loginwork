@@ -1,25 +1,53 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30517.126
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KEK", "KEK\KEK.csproj", "{AD8939D7-49FD-4909-BFAF-D98B92381244}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AD8939D7-49FD-4909-BFAF-D98B92381244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD8939D7-49FD-4909-BFAF-D98B92381244}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD8939D7-49FD-4909-BFAF-D98B92381244}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD8939D7-49FD-4909-BFAF-D98B92381244}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {39EE91DD-590C-46C4-A6E8-70E4382E9F8E}
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace KEK
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //login:admin
+            //password: pass1234
+
+            //deslare variablas
+            //assing value -
+            string login = "admin";
+            string password = "pass1234";
+
+            string userName, userPassword;
+
+
+            int tries = 0;
+
+            while (tries != 3)
+            {
+                Console.WriteLine("enthe your login:");
+                userName = Console.ReadLine();
+                Console.WriteLine("enthe your password:");
+                userPassword = Console.ReadLine();
+
+                //if (login==userName && password==userPassword)
+                //Console.WriteLine("Welcome!");
+                //else
+                //Console.WriteLine("Oops!");
+
+                if (login != userName || password != userPassword)
+                {
+                    Console.WriteLine("Oops!");
+                    tries++;
+                    Console.WriteLine($"Attempels left {tries}");
+                }
+
+                else
+                {
+                    Console.WriteLine("Welcome!");
+                    break;
+                }
+
+
+            }
+                
+        }
+    }
+}
+
